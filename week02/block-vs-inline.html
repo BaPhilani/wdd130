@@ -11,29 +11,65 @@
 <body>
     <main>
         <h1>Exercise: Block vs. Inline Elements</h1>
-        <p class="note">Some basic styling has been applied in order to illustrate the elements structure and
-            boundaries.</p>
+        <p class="note">
+            Some basic styling has been applied in order to illustrate the elements structure and
+            boundaries.
+        </p>
 
-        <h2>Task 1: Swap Block and Inline Elements</h2>
-        <div>In the HTML of this document, change this div element to a span element.</div>
+        <section aria-labelledby="task-1">
+            <h2 id="task-1">Task 1: Swap Block and Inline Elements</h2>
+            <p>In the HTML of this document, change this <code>div</code> element to a
+                <code>span</code> element.
+            </p>
+            <div>Sample element for Task 1</div>
+            <p class="question">What happens to the layout? Does it still take up the full width?
+            </p>
+        </section>
 
-        <p class="question">What happens to the layout? Does it still take up the full width?</p>
+        <section aria-labelledby="task-2">
+            <h2 id="task-2">Task 2: Nesting Inline in Block</h2>
+            <p>
+                A paragraph <code>&lt;p&gt;</code> element (block) with a
+                <span><code>&lt;span&gt;</code> element</span>.
+            </p>
+            <p class="question">
+                Add another inline element like <code>&lt;em&gt;</code> or
+                <code>&lt;strong&gt;</code> inside the
+                paragraph. Observe how it flows within the line.
+            </p>
+        </section>
 
-        <h2>Task 2: Nesting Inline in Block</h2>
-        <p>A paragraph &lt;p&gt; element (block) with a <span>&lt;span&gt; element;</span></p>
-        <p class="question">Add another inline element like &lt;em&gt; or &lt;strong&gt; inside the paragraph. Observe
-            how it flows within the line.</p>
+        <section aria-labelledby="task-3">
+            <h2 id="task-3">Task 3: Nesting Block in Inline</h2>
+            <p>
+                Try placing a <code>&lt;div&gt;</code> inside a <code>&lt;span&gt;</code> element
+                (for testing only).
+            </p>
+            <p class="question">
+                What error or layout issue do you see? Why does this happen?
+            </p>
+        </section>
 
-        <h2>Task3: Nesting Block in Inline</h2>
-        <span>Try placing a &lt;div&gt; inside a &lt;span&gt; element.</span>
-            <p class="question">What error or layout issue do you see? Why does this happen?</p>
-
-
-            <h2>Task 4: Review the HTML markup of the following Inline Elements</h2>
-        &lt;img&gt; element
-        <img src="images/castle.webp" alt="placeholder image (images are inline)" width="300" height="300">
-        <a href="https://churchofjesuschrist.org">&lt;a&gt; anchor element</a>
-        <button type="button">&lt;button&gt; element</button>
+        <section aria-labelledby="task-4">
+            <h2 id="task-4">Task 4: Review the HTML Markup of Inline Elements</h2>
+            <ul>
+                <li>
+                    <figure>
+                        <figcaption><code>&lt;img&gt;</code> element</figcaption>
+                        <img src="images/castle.webp"
+                          alt="Placeholder image (images are inline by default)" width="300"
+                          height="300">
+                    </figure>
+                </li>
+                <li>
+                    <a href="https://churchofjesuschrist.org"><code>&lt;a&gt;</code> anchor
+                        element</a>
+                </li>
+                <li>
+                    <button type="button"><code>&lt;button&gt;</code> element</button>
+                </li>
+            </ul>
+        </section>
     </main>
 </body>
 
