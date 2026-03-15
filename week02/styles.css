@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #1f3a5f;
+    --text-color: #222;
+    --bg-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+header,
+main,
+aside,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
