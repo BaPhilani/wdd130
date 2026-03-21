@@ -60,6 +60,10 @@ header nav a {
     text-decoration: none;
 }
 
+header nav a:hover {
+    color: var(--nav-hover);
+}
+
 nav {
     padding: 1rem 0;
 }
