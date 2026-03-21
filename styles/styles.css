@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --primary-color: #1f3a5f;
     --text-color: #222;
@@ -6,10 +12,6 @@
     --border-color: #000;
     --shadow-color: gray;
     --aside-bg-color: #eaf2ff;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 body {
@@ -46,18 +48,22 @@ main img {
     box-shadow: 0 0 30px var(--shadow-color);
 }
 
-aside {
-    width: 20rem;
-    margin: 1rem auto;
-    border: 1px solid var(--primary-color);
-    padding: 1rem;
-    background-color: var(--aside-bg-color);
-    color: var(--text-color);
+aside h2 {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1;
+    background-color: rgba(31, 58, 95, 0.8);
+    color: #fff;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
 }
 
 aside img {
-    width: 200px;
+    display: block;
+    width: 100%;
     height: auto;
+    /* change from 200px */
 }
 
 p {
@@ -68,4 +74,28 @@ footer {
     margin-top: 2rem;
     border-top: 2px solid var(--primary-color);
     text-align: center;
+}
+
+/* Class Selectors */
+
+.box {
+    margin: 1rem;
+    border: 1px solid var(--primary-color);
+    padding: 1rem;
+    /* line 81 - keep this */
+    background-color: var(--aside-bg-color);
+    color: var(--text-color);
+}
+
+.profile-img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+    width: 225px;
+    height: auto;
+}
+
+main::after {
+    content: "";
+    display: block;
+    clear: both;
 }
