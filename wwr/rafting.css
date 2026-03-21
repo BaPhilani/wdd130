@@ -44,7 +44,21 @@ h6 {
     color: var(--primary-color);
 }
 
-header,
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a {
+    text-decoration: none;
+}
 
 nav {
     padding: 1rem 0;
