@@ -1,4 +1,17 @@
-:root {}
+:root {
+    --primary-color: #1b4965;
+    --secondary-color: #5fa8d3;
+    --accent1-color: #bee9e8;
+    --accent2-color: #cae9ff;
+
+    --heading-font: "Georgia", serif;
+    --body-font: "Arial", sans-serif;
+
+    --nav-background-color: #1b4965;
+    --nav-link-color: #ffffff;
+    --nav-hover-link-color: #1b4965;
+    --nav-hover-background-color: #bee9e8;
+}
 
 :root {
     --primary-color: #1a3c5e;
@@ -24,7 +37,6 @@
     --spacing-lg: 2rem;
 }
 
-/* ...existing code... */
 * {
     margin: 0;
     padding: 0;
