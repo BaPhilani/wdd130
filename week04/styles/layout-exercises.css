@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* shared card style */
+.one,
+.two,
+.three {
+    border: 1px solid #999;
+    background: #f4f4f4;
+    padding: 1rem;
+}
+
+/* 1) Center paragraph horizontally + vertically */
+.one {
+    min-height: 120px;
+    margin-bottom: 1rem;
+}
+
+.one.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one.grid {
+    display: grid;
+    place-items: center;
+}
+
+.one p,
+.two p,
+.three p {
+    margin: 0;
+    text-align: center;
+}
+
+/* 2) Single row when wide, stacked when narrow, equal side/item spacing */
+.container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container2 .two {
+    width: 100%;
+    min-height: 90px;
+    display: grid;
+    place-items: center;
+}
+
+@media (min-width: 800px) {
+    .container2 {
+        flex-direction: row;
+        justify-content: space-evenly;
+        /* equal space between sides and items */
+        gap: 0;
+    }
+
+    .container2 .two {
+        flex: 0 1 220px;
+    }
+}
+
+/* 3) Grid table with first row spanning 3 columns */
+.container3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.columns-3 {
+    grid-column: 1 / -1;
+}
