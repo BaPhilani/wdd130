@@ -187,7 +187,18 @@ main .socialmedia a {
     margin: 0;
 }
 
-.footer {
+.fofigure img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer {
     background-color: var(--footer-bg);
     color: var(--light-text);
     padding: var(--spacing-lg);
