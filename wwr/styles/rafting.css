@@ -1,29 +1,35 @@
 :root {
-    --primary-color: #1a3c5e;
-    --secondary-color: #2e86ab;
-    --accent-color: #f5a623;
-    --text-color: #222222;
+    --primary-color: #1a5276;
+    --secondary-color: #4a235a;
+    --accent-color: #c0392b;
+    --background-color: #f5f5f5;
+    --text-color: #1a1a1a;
     --light-text: #ffffff;
-    --bg-color: #f4f4f4;
-    --footer-bg: #1a3c5e;
-    --nav-hover: #f5a623;
-    --font-base: Arial, Helvetica, sans-serif;
-    --font-heading: Georgia, "Times New Roman", serif;
+    --section-border: #4a235a;
+
+    --heading-font: Georgia, serif;
+    --body-font: Arial, sans-serif;
+
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
-    --spacing-lg: 2rem;
+    --spacing-lg: 1.5rem;
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-base);
+    margin: 0;
+    font-family: var(--body-font);
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background: var(--background-color);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 h1,
@@ -32,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-heading);
+    font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
@@ -48,28 +54,23 @@ header {
     padding: 0.75rem 1.25rem;
     background-color: var(--primary-color);
     border-bottom: 4px solid var(--accent-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Logo image in header */
 header img {
     width: 80px;
-    height: auto;
-    display: block;
     border-radius: 8px;
-    background-color: #fff;
+    background: var(--light-text);
     padding: 0.25rem;
 }
 
-/* Nav container placement in header grid */
 header nav {
     justify-self: end;
 }
 
 nav {
     display: flex;
-    align-items: center;
     gap: 0.75rem;
+    align-items: center;
 }
 
 nav a {
@@ -78,39 +79,21 @@ nav a {
     font-weight: 600;
     padding: 0.5rem 0.85rem;
     border-radius: 6px;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover,
 nav a:focus-visible {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--light-text);
     outline: none;
-}
-
-p {
-    padding: var(--spacing-sm) 0;
-    margin: var(--spacing-sm) 0;
-}
-
-section {
-    padding: var(--spacing-md) 0;
-    margin: var(--spacing-md) 0;
-}
-
-article {
-    padding: var(--spacing-md);
-    margin: var(--spacing-md) 0;
 }
 
 .hero {
     position: relative;
 }
 
-.hero img {
-    display: block;
+.hero > img {
     width: 100%;
-    height: auto;
 }
 
 .hero h1 {
@@ -120,7 +103,7 @@ article {
     transform: translateX(-50%);
     width: 90%;
     text-align: center;
-    background-color: rgba(26, 60, 94, 0.75);
+    background: rgba(26, 60, 94, 0.75);
     color: var(--light-text);
     padding: 0.75rem 1rem;
 }
@@ -130,7 +113,7 @@ article {
     left: 2rem;
     right: 2rem;
     bottom: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     color: var(--text-color);
     padding: var(--spacing-md);
     border-left: 6px solid var(--accent-color);
@@ -139,16 +122,9 @@ article {
 .hero article img {
     float: right;
     width: 125px;
-    height: auto;
     margin: 0 0 0.5rem 1rem;
     border: 2px solid var(--primary-color);
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-}
-
-main .socialmedia a {
-    text-decoration: none;
 }
 
 .history {
@@ -159,8 +135,7 @@ main .socialmedia a {
         "left image right";
     gap: 1rem 1.5rem;
     align-items: center;
-    background: #e9e9e9;
-    border: 1px solid #999;
+    border: 1px solid var(--section-border);
     padding: 1rem 1.5rem;
 }
 
@@ -177,9 +152,7 @@ main .socialmedia a {
 
 .history img {
     grid-area: image;
-    width: 140px;
-    height: auto;
-    display: block;
+    width: 160px;
 }
 
 .history p:last-of-type {
@@ -187,24 +160,49 @@ main .socialmedia a {
     margin: 0;
 }
 
-.figure img {
-    width: 200px;
-    height: auto;
-    display: block;
+.adventures {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    gap: 1rem;
+    align-items: start;
+    border: 1px solid var(--section-border);
+    padding: 1rem 1.5rem;
 }
 
-figcaption {
+.adventures h2 {
+    grid-column: 1 / -1;
     text-align: center;
-    padding: 10px 0;
+    margin: 0 0 0.5rem;
+}
+
+.adventures figure {
+    margin: 0;
+    text-align: center;
+}
+
+.adventures img {
+    width: 100%;
+    max-width: 180px;
+    height: 120px;
+    object-fit: cover;
+    margin: 0 auto 0.5rem;
+    border: 1px solid var(--section-border);
+    background: var(--light-text);
+}
+
+.adventures figcaption {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 footer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    /* left spacer | centered text | right icons */
     align-items: center;
-    padding: 12px 16px;
-    column-gap: 12px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--primary-color);
+    color: var(--light-text);
 }
 
 footer p {
@@ -217,69 +215,16 @@ footer .socialmedia {
     grid-column: 3;
     justify-self: end;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-}
-
-footer .socialmedia a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    gap: var(--spacing-sm);
 }
 
 footer .socialmedia img {
-    display: block;
     width: 32px;
     height: 32px;
-    object-fit: contain;
 }
 
-.adventures {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    align-items: start;
-    background: #e9e9e9;
-    border: 1px solid #999;
-    padding: 1rem 1.5rem;
-}
-
-.adventures h2 {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: 0 0 0.5rem 0;
-}
-
-.adventures figure {
-    margin: 0;
-    text-align: center;
-}
-
-.adventures img {
-    width: 100%;
-    max-width: 180px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 0.5rem;
-    border: 1px solid #bbb;
-    background: #fff;
-}
-
-.adventures figcaption {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-/* Optional small-screen wrap */
 @media (max-width: 900px) {
     .adventures {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .adventures h2 {
-        grid-column: 1 / -1;
     }
 }
