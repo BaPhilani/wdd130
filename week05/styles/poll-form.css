@@ -2,67 +2,97 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-    --bg: #f5f7fb;
+    --bg: #eef2f7;
     --card: #ffffff;
     --text: #1f2937;
     --muted: #6b7280;
-    --border: #d1d5db;
+    --border: #cbd5e1;
     --accent: #2563eb;
     --accent-hover: #1d4ed8;
+    --heading: #0f172a;
 }
 
+/* ===== Page ===== */
 body {
-    margin: 0;
-    font-family: "segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
     color: var(--text);
-    background: var(--bg);
+    background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
     line-height: 1.5;
+    min-height: 100vh;
+    padding: 1.5rem;
 }
 
-/* ===== Layout ===== */
-header,
-footer {
+/* ===== Header ===== */
+header {
     text-align: center;
-    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
-main {
-    max-width: 700px;
-    margin: 1rem auto 2rem;
-    padding: 0 1rem;
+h1 {
+    color: var(--heading);
+    font-size: 2rem;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.25rem;
 }
 
 /* ===== Form Card ===== */
 form {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    width: min(760px, 100%);
+    margin: 0 auto;
     padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--card);
+    display: grid;
+    gap: 1rem;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 fieldset {
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 1rem;
-    margin: 0;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0.85rem 1rem;
+    align-items: center;
 }
 
 legend {
+    grid-column: 1 / -1;
+    color: var(--heading);
     font-weight: 700;
-    padding: 0 0.5rem;
+    font-size: 1.1rem;
+    padding: 0 0.4rem;
 }
 
-/* ===== Form Controls ===== */
+/* ===== Form Elements (different font from headings/legends) ===== */
+label,
+input,
+button,
+select,
+textarea {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
 label {
-    display: block;
-    margin: 0.75rem 0 0.35rem;
+    text-align: right;
+    padding-right: 0.5rem;
     font-weight: 600;
+}
+
+/* Place controls in second column */
+input,
+select,
+textarea,
+button {
+    grid-column: 2 / 3;
 }
 
 input[type="text"],
@@ -70,39 +100,44 @@ input[type="email"],
 select,
 textarea {
     width: 100%;
-    padding: 0.65rem 0.75rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 1rem;
     border: 1px solid var(--border);
-    border-radius: 6px;
-    font: inherit;
-}
-
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 0.4rem;
+    border-radius: 7px;
+    background-color: #fff;
 }
 
 textarea {
-    min-height: 110px;
+    min-height: 120px;
     resize: vertical;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 2px solid rgba(37, 99, 235, 0.25);
+    outline: 2px solid rgba(37, 99, 235, 0.2);
     border-color: var(--accent);
 }
 
-/* ===== Button ===== */
+/* Checkbox styling */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    justify-self: start;
+}
+
+/* Button */
 button[type="submit"] {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     border: none;
-    border-radius: 6px;
-    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
     background: var(--accent);
     color: #fff;
     font-weight: 700;
     cursor: pointer;
+    width: fit-content;
 }
 
 button[type="submit"]:hover {
@@ -110,8 +145,9 @@ button[type="submit"]:hover {
 }
 
 /* ===== Footer ===== */
-footer p {
-    margin: 0;
+footer {
+    text-align: center;
+    margin-top: 1rem;
     color: var(--muted);
     font-size: 0.9rem;
 }
