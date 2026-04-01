@@ -54,6 +54,22 @@ form {
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
+.form-item {
+    display: grid;
+    align-items: center;
+    gap: 0.6rem 1rem;
+}
+
+.column1 {
+    grid-template-columns: 3fr 1fr;
+    margin: 0.4rem 0;
+}
+
+.column2 {
+    grid-template-columns: 1fr 2fr;
+    margin: 0.4rem 0;
+}
+
 fieldset {
     border: 1px solid var(--border);
     border-radius: 10px;
