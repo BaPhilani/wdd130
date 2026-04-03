@@ -331,4 +331,34 @@ footer .socialmedia img {
     .adventures {
         grid-template-columns: 1fr;
     }
+
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.6rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.contact-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.contact-form .submit-button {
+    background-color: #5b4db1;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #45388f;
 }
