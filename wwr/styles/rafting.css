@@ -294,19 +294,21 @@ footer .socialmedia img {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    gap: 2rem;
-    flex-wrap: nowrap;
+    /* keeps all cards aligned from top */
+    gap: 1.5rem;
 }
 
-.profile-cards figure {
-    margin: 0;
-    text-align: center;
-    flex: 1;
+.profile-cards figure: :first-child img {
+    object-fit: contain;
+    object-position: top;
+    background: #fff;
 }
 
 .profile-cards img {
     width: 120px;
-    height: auto;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
     display: block;
     margin: 0 auto 0.5rem;
 }
