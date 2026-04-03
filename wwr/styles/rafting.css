@@ -19,7 +19,7 @@
     --spacing-lg: 1.5rem;
 }
 
-/* Universal reset */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -73,7 +73,6 @@ header {
     background-color: var(--primary-color);
     border-bottom: 4px solid var(--header-border-color);
     color: var(--light-text);
-    /* contrast fix */
 }
 
 header img {
@@ -178,17 +177,15 @@ header nav a:focus-visible {
     grid-area: left;
 }
 
+.history p:last-of-type {
+    grid-area: right;
+}
+
 .history img {
     grid-area: image;
     width: 220px;
     max-width: 100%;
     margin: 0 auto;
-    justify-self: center;
-    align-self: center;
-}
-
-.history p:last-of-type {
-    grid-area: right;
 }
 
 /* Adventures */
@@ -226,6 +223,92 @@ header nav a:focus-visible {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-color);
+}
+
+/* Contact page */
+.contact-intro {
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid #999;
+    background: #eee;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.6rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.contact-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.contact-form .submit-button {
+    background-color: #5b4db1;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #45388f;
+}
+
+/* Employee profiles */
+.employee-profiles {
+    border: 1px solid #999;
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.profile-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+}
+
+.profile-cards figure {
+    margin: 0;
+    width: 180px;
+    text-align: center;
+}
+
+.profile-cards img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    /* prevents face/head crop */
+    object-position: top center;
+    display: block;
+    margin: 0 auto 0.5rem;
+    background: #fff;
+}
+
+.profile-cards figcaption {
+    font-size: 0.95rem;
 }
 
 /* Footer */
@@ -269,7 +352,6 @@ footer .socialmedia img {
             "image"
             "left"
             "right";
-        gap: 0.75rem;
         text-align: center;
     }
 
@@ -283,40 +365,6 @@ footer .socialmedia img {
     }
 }
 
-.employee-profiles {
-    border: 1px solid #999;
-    padding: 1rem;
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.profile-cards {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    /* keeps all cards aligned from top */
-    gap: 1.5rem;
-}
-
-.profile-cards figure: :first-child img {
-    object-fit: contain;
-    object-position: top;
-    background: #fff;
-}
-
-.profile-cards img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin: 0 auto 0.5rem;
-}
-
-.profile-cards figcaption {
-    font-size: 0.95rem;
-}
-
 @media (max-width: 700px) {
     header {
         grid-template-columns: 1fr;
@@ -326,6 +374,15 @@ footer .socialmedia img {
 
     header nav {
         justify-self: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-cards {
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -351,9 +408,6 @@ footer .socialmedia img {
 
     .hero article {
         position: static;
-        left: auto;
-        right: auto;
-        bottom: auto;
         margin-top: 0.5rem;
     }
 
@@ -365,34 +419,4 @@ footer .socialmedia img {
     .adventures {
         grid-template-columns: 1fr;
     }
-
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form button {
-    width: 100%;
-    max-width: 350px;
-    padding: 0.6rem;
-    border: 1px solid #888;
-    border-radius: 4px;
-    font: inherit;
-}
-
-.contact-form fieldset {
-    border: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.contact-form .submit-button {
-    background-color: #5b4db1;
-    color: #fff;
-    font-weight: 700;
-    cursor: pointer;
-    border: none;
-}
-
-.contact-form .submit-button:hover {
-    background-color: #45388f;
 }
